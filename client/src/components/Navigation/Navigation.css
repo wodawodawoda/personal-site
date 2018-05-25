@@ -1,0 +1,7 @@
+.navigation {
+  background: darkred; }
+  .navigation__link {
+    text-decoration: none;
+    color: black; }
+    .navigation__link--active {
+      color: goldenrod; }
