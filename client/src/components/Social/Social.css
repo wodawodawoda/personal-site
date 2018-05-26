@@ -1,0 +1,12 @@
+.social {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  width: 100%; }
+  .social__icon {
+    margin: 3px 0;
+    padding: 2px;
+    font-size: 1.2rem;
+    transition: 0.3s; }
+    .social__icon:hover {
+      color: goldenrod; }

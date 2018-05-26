@@ -19,12 +19,14 @@
   transition: 5s
   &__step
     display: flex
+    justify-content: center
     align-items: center
     transition: 3s
-    overflow: hidden
-    margin: 10px
+    position: relative
     &:hover .experience__text
       opacity: 1
+  &__icon
+    font-size: 2rem
   &__text
     transition: 0.5s
     opacity: 0
@@ -34,31 +36,28 @@
     border-left-width: 10px
     width: 100px
     height: 6px
-  &__icon
-    font-size: 2rem
-    &--mongo
-      width: 2rem
 
 .animate
-  //animation-name: rotate
-  position: relative
+  animation-name: rotate
   animation-duration: 5s
   animation-timing-function: linear
   animation-iteration-count: infinite
 
 
 
-@for $i from 0 through 9
-  $time: random(100)
+@for $i from 1 through 10
+  $time: random(2)
   .experience__step--#{$i}
     grid-column: 11 - $i
-    left: randomize(-100, 100) + %
-    @if $time > 50
+    //left: -60 + ($i * 10) + %
+    left: randomize(-150, 150) + px
+    //left: random(30) + 4 * $i - 15 + vw
+    //top: random(400) - 100 + 20px * $i
+
+    @if $time == 1
       animation-direction: normal
-      height: $time
     @else
       animation-direction: reverse
-      height: $time
 
 
 @keyframes rotate

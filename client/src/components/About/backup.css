@@ -16,12 +16,14 @@
   transition: 5s; }
   .experience__step {
     display: flex;
+    justify-content: center;
     align-items: center;
     transition: 3s;
-    overflow: hidden;
-    margin: 10px; }
+    position: relative; }
     .experience__step:hover .experience__text {
       opacity: 1; }
+  .experience__icon {
+    font-size: 2rem; }
   .experience__text {
     transition: 0.5s;
     opacity: 0;
@@ -31,76 +33,62 @@
     border-left-width: 10px;
     width: 100px;
     height: 6px; }
-  .experience__icon {
-    font-size: 2rem; }
-    .experience__icon--mongo {
-      width: 2rem; }
 
 .animate {
-  position: relative;
+  animation-name: rotate;
   animation-duration: 5s;
   animation-timing-function: linear;
   animation-iteration-count: infinite; }
 
-.experience__step--0 {
-  grid-column: 11;
-  left: -52%;
-  animation-direction: normal;
-  height: 57; }
-
 .experience__step--1 {
   grid-column: 10;
-  left: 46%;
-  animation-direction: normal;
-  height: 51; }
+  left: -58px;
+  animation-direction: reverse; }
 
 .experience__step--2 {
   grid-column: 9;
-  left: 31%;
-  animation-direction: normal;
-  height: 89; }
+  left: -25px;
+  animation-direction: reverse; }
 
 .experience__step--3 {
   grid-column: 8;
-  left: -82%;
-  animation-direction: reverse;
-  height: 17; }
+  left: -49px;
+  animation-direction: reverse; }
 
 .experience__step--4 {
   grid-column: 7;
-  left: -40%;
-  animation-direction: normal;
-  height: 71; }
+  left: 134px;
+  animation-direction: reverse; }
 
 .experience__step--5 {
   grid-column: 6;
-  left: -68%;
-  animation-direction: normal;
-  height: 65; }
+  left: -138px;
+  animation-direction: normal; }
 
 .experience__step--6 {
   grid-column: 5;
-  left: -83%;
-  animation-direction: reverse;
-  height: 11; }
+  left: 8px;
+  animation-direction: reverse; }
 
 .experience__step--7 {
   grid-column: 4;
-  left: 73%;
-  animation-direction: normal;
-  height: 87; }
+  left: -24px;
+  animation-direction: normal; }
 
 .experience__step--8 {
   grid-column: 3;
-  left: 31%;
-  animation-direction: reverse;
-  height: 29; }
+  left: 58px;
+  animation-direction: normal; }
 
 .experience__step--9 {
   grid-column: 2;
-  left: -38%;
-  animation-direction: normal;
-  height: 84; }
+  left: 124px;
+  animation-direction: reverse; }
+
+.experience__step--10 {
+  grid-column: 1;
+  left: 146px;
+  animation-direction: normal; }
 
 @keyframes rotate {
   0% {

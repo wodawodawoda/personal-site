@@ -12,10 +12,10 @@ import {
 import './App.css';
 
 // Import components
-import Navigation from '../Navigation/Navigation';
 import Home from '../Home/Home';
 import About from '../About/About';
 import NoPage from '../NoPage/NoPage';
+import Sidebar from '../Sidebar/Sidebar'
 
 
 
@@ -26,7 +26,7 @@ class App extends Component {
         <Route
           render={({ location }) => (
             <div className="app">
-              <Route path='*' component={ Navigation }/>
+              <Route path='*' component={ Sidebar }/>
               <TransitionGroup>
                 <CSSTransition
                   key={location.key}

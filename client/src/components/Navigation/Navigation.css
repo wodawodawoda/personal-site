@@ -1,7 +1,18 @@
 .navigation {
-  background: darkred; }
+  display: flex;
+  flex-flow: column;
+  width: 100%; }
   .navigation__link {
-    text-decoration: none;
-    color: black; }
+    text-align: center;
+    padding: 15px;
+    font-size: 1.4rem;
+    transition: 0.3s; }
     .navigation__link--active {
-      color: goldenrod; }
+      color: goldenrod;
+      background: #5d5d5d; }
+    .navigation__link:hover {
+      background: palegoldenrod; }
+
+.alt {
+  display: none;
+  opacity: 0; }
