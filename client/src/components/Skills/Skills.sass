@@ -1,0 +1,87 @@
+\:root
+  --anim-width: 10px
+
+@function randomize($min, $max)
+  @return floor($min + random() * ($max + 1 - $min))
+
+.skills
+  display: flex
+  flex-flow: column
+  grid-area: content
+  &__projects
+    display: flex
+    flex-flow: row wrap
+    justify-content: stretch
+    .github-item
+      min-width: 300px
+      width: calc(100% / 3)
+
+.experience
+  margin: 40vh auto auto
+  display: flex
+  flex-flow: row nowrap
+  align-items: center
+  position: relative
+  transition: 5s
+  &__step
+    display: flex
+    justify-content: center
+    align-items: center
+    transition: 3s
+    position: relative
+    &:hover .experience__text
+      opacity: 1
+      width: 100px
+  &__icon
+    font-size: 3rem
+  &__text
+    transition: 0.5s
+    width: 0
+    opacity: 0
+    border: 1px solid black
+    border-left-style: solid
+    border-left-color: goldenrod
+    border-left-width: 10px
+    height: 6px
+
+.animate
+  animation-name: rotate
+  animation-duration: 5s
+  animation-timing-function: linear
+  animation-iteration-count: infinite
+
+
+
+@for $i from 1 through 10
+  $time: random(2)
+  .experience__step--#{$i}
+    grid-column: 11 - $i
+    //left: -60 + ($i * 10) + %
+    left: randomize(-150, 150) + px
+    //left: random(30) + 4 * $i - 15 + vw
+    //top: random(400) - 100 + 20px * $i
+
+    @if $time == 1
+      animation-direction: normal
+    @else
+      animation-direction: reverse
+
+
+@keyframes rotate
+  0%
+    transform: rotate(0deg)
+  100%
+    transform: rotate(360deg)
+
+
+@media (max-width: 768px)
+  .skills
+    &__projects
+      .github-item
+        width: 50%
+
+@media (max-width: 660px)
+  .skills
+    &__projects
+      .github-item
+        width: 100%

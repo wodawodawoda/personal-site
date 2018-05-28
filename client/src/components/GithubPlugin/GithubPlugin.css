@@ -1,0 +1,39 @@
+.github-plugin {
+  background: #FFF;
+  max-height: 300px; }
+  .github-plugin__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #24292e;
+    padding: 10px;
+    margin-bottom: 15px; }
+  .github-plugin__name {
+    color: #FFFFFF; }
+  .github-plugin__repo-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid #24292e;
+    padding: 10px 0; }
+    .github-plugin__repo-header:hover + .github-plugin__commits {
+      height: 100%; }
+  .github-plugin__description {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid #24292e;
+    padding-bottom: 10px;
+    padding-left: 10px; }
+  .github-plugin__commits {
+    overflow: auto;
+    height: 0;
+    max-height: 200px; }
+    .github-plugin__commits:hover {
+      height: 100%; }
+  .github-plugin__message {
+    text-align: right; }
+  .github-plugin__commit {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px; }

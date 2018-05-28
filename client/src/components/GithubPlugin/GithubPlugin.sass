@@ -1,0 +1,41 @@
+.github-plugin
+  background: #FFF
+  max-height: 300px
+  &__header
+    display: flex
+    justify-content: space-between
+    align-items: center
+    background: rgb(36, 41, 46)
+    padding: 10px
+    margin-bottom: 15px
+  &__name
+    color: #FFFFFF
+  &__repo-header
+    display: flex
+    justify-content: space-between
+    align-items: center
+    border-bottom: 3px solid rgb(36, 41, 46)
+    padding: 10px 0
+    &:hover + .github-plugin__commits
+      height: 100%
+  &__description
+    display: flex
+    justify-content: space-between
+    align-items: center
+    border-bottom: 3px solid rgb(36, 41, 46)
+    padding-bottom: 10px
+    padding-left: 10px
+  &__commits
+    overflow: auto
+    height: 0
+    max-height: 200px
+    &:hover
+      height: 100%
+  &__message
+    text-align: right
+  &__commit
+    display: flex
+    justify-content: space-between
+    padding: 15px
+
+

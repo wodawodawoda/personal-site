@@ -1,68 +1,6 @@
-\:root
-  --anim-width: 10px
-
-@function randomize($min, $max)
-  @return floor($min + random() * ($max + 1 - $min))
-
 .about
   grid-area: content
   display: flex
   flex-flow: column wrap
   height: 100%
   overflow: hidden
-
-.experience
-  margin: auto
-  display: flex
-  flex-flow: column
-  position: relative
-  transition: 5s
-  &__step
-    display: flex
-    align-items: center
-    transition: 3s
-    overflow: hidden
-    margin: 10px
-    &:hover .experience__text
-      opacity: 1
-  &__text
-    transition: 0.5s
-    opacity: 0
-    border: 1px solid black
-    border-left-style: solid
-    border-left-color: goldenrod
-    border-left-width: 10px
-    width: 100px
-    height: 6px
-  &__icon
-    font-size: 2rem
-    &--mongo
-      width: 2rem
-
-.animate
-  //animation-name: rotate
-  position: relative
-  animation-duration: 5s
-  animation-timing-function: linear
-  animation-iteration-count: infinite
-
-
-
-@for $i from 0 through 9
-  $time: random(100)
-  .experience__step--#{$i}
-    grid-column: 11 - $i
-    left: randomize(-100, 100) + %
-    @if $time > 50
-      animation-direction: normal
-      height: $time
-    @else
-      animation-direction: reverse
-      height: $time
-
-
-@keyframes rotate
-  0%
-    transform: rotate(0deg)
-  100%
-    transform: rotate(360deg)

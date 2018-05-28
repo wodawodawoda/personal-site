@@ -4,11 +4,24 @@
   to {
     transform: rotate(360deg); } }
 
+:root {
+  --main-background: #5d5d5d; }
+
+.particles-background {
+  background: var(--main-background);
+  z-index: -1;
+  position: fixed;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0; }
+
 .app {
   display: grid;
   grid-template-columns: 60px auto;
-  grid-template-rows: 100vh;
-  grid-template-areas: "sidebar content"; }
+  grid-template-rows: minmax(100vh, auto);
+  grid-template-areas: "sidebar content";
+  overflow: hidden; }
 
 .fade-enter {
   opacity: 0;

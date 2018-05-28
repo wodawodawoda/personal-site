@@ -1,0 +1,139 @@
+.cv
+  grid-area: content
+  display: flex
+  flex-flow: row wrap
+  align-items: flex-start
+  padding: 20px
+  position: relative
+  &__download
+    background: rgba(63,63,63, 0.5)
+    display: flex
+    flex-flow: column wrap
+    width: 500px
+    color: goldenrod
+    text-align: center
+    margin-left: 20px
+    position: sticky
+    top: 0
+  &__btn
+    font-size: 3em
+    text-transform: uppercase
+  &__template
+    display: flex
+    flex-flow: column nowrap
+  &__item
+    display: flex
+    flex-flow: row wrap
+    background: radial-gradient(circle at 20%, rgba(63,63,63, 0.5) 20%, rgba(93,93,93, 0) 97%)
+    margin: 20px 0
+    color: #fff
+    max-width: 500px
+    &:not(:first-of-type)
+      padding: 20px
+    &--basics
+    &--about
+    &--experience
+    &--skills
+    &--education
+
+
+.section-header
+  width: 100%
+.basics
+  display: flex
+  flex-flow: row wrap
+  margin-top: 0
+  &__info
+    margin-left: 20px
+    display: flex
+    flex-flow: column
+    text-align: center
+  &__image
+    width: 100%
+    max-width: 200px
+  &__name
+    flex: 1
+  &__label
+  &__contact
+  &__phone
+  &__website
+  &__language
+  &__profiles
+    margin-bottom: 10px
+    font-size: 2em
+    display: flex
+    justify-content: space-around
+  &__github
+    transition: 0.2s
+    &:hover
+      color: rgb(118, 118, 118)
+  &__linkedin
+    transition: 0.2s
+    &:hover
+      color: rgb(0, 119, 181)
+  &__facebook
+
+
+.about
+  &__text
+    width: 100%
+    max-width: 500px
+.experience
+  &__jobs
+    display: flex
+    flex-flow: column
+    width: 100%
+    max-width: 500px
+  &__job
+    display: flex
+    flex-flow: row wrap
+    background: rgba(93,93,93, 1)
+    margin: 10px 0
+    padding: 0 10px
+  &__position
+    width: 50%
+    font-weight: 900
+  &__company
+    width: 50%
+  &__period
+    opacity: 0.2
+  &__startDate
+    &:after
+      content: '-'
+      padding: 0 10px
+  &__endDate
+  &__summary
+  &__highlights
+  &__highlight
+
+
+.skills
+  &__list
+    width: 100%
+    max-width: 500px
+  &__skill
+  &__name
+  &__level
+  &__keywords
+    display: flex
+    width: 100%
+    justify-content: space-around
+    margin-top: 10px
+  &__keyword
+
+.education
+  &__list
+    width: 100%
+    max-width: 500px
+  &__item
+    margin: 10px 0
+  &__institution
+    font-weight: 900
+    &:after
+      content: ','
+      padding-right: 5px
+  &__area
+  &__institution
+  &__date
+    opacity: 0.2
+  &__type

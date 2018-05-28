@@ -1,0 +1,120 @@
+.cv {
+  grid-area: content;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: flex-start;
+  padding: 20px;
+  position: relative; }
+  .cv__download {
+    background: rgba(63, 63, 63, 0.5);
+    display: flex;
+    flex-flow: column wrap;
+    width: 500px;
+    color: goldenrod;
+    text-align: center;
+    margin-left: 20px;
+    position: sticky;
+    top: 0; }
+  .cv__btn {
+    font-size: 3em;
+    text-transform: uppercase; }
+  .cv__template {
+    display: flex;
+    flex-flow: column nowrap; }
+  .cv__item {
+    display: flex;
+    flex-flow: row wrap;
+    background: radial-gradient(circle at 20%, rgba(63, 63, 63, 0.5) 20%, rgba(93, 93, 93, 0) 97%);
+    margin: 20px 0;
+    color: #fff;
+    max-width: 500px; }
+    .cv__item:not(:first-of-type) {
+      padding: 20px; }
+
+.section-header {
+  width: 100%; }
+
+.basics {
+  display: flex;
+  flex-flow: row wrap;
+  margin-top: 0; }
+  .basics__info {
+    margin-left: 20px;
+    display: flex;
+    flex-flow: column;
+    text-align: center; }
+  .basics__image {
+    width: 100%;
+    max-width: 200px; }
+  .basics__name {
+    flex: 1; }
+  .basics__profiles {
+    margin-bottom: 10px;
+    font-size: 2em;
+    display: flex;
+    justify-content: space-around; }
+  .basics__github {
+    transition: 0.2s; }
+    .basics__github:hover {
+      color: #767676; }
+  .basics__linkedin {
+    transition: 0.2s; }
+    .basics__linkedin:hover {
+      color: #0077b5; }
+
+.about__text {
+  width: 100%;
+  max-width: 500px; }
+
+.experience__jobs {
+  display: flex;
+  flex-flow: column;
+  width: 100%;
+  max-width: 500px; }
+
+.experience__job {
+  display: flex;
+  flex-flow: row wrap;
+  background: #5d5d5d;
+  margin: 10px 0;
+  padding: 0 10px; }
+
+.experience__position {
+  width: 50%;
+  font-weight: 900; }
+
+.experience__company {
+  width: 50%; }
+
+.experience__period {
+  opacity: 0.2; }
+
+.experience__startDate:after {
+  content: '-';
+  padding: 0 10px; }
+
+.skills__list {
+  width: 100%;
+  max-width: 500px; }
+
+.skills__keywords {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  margin-top: 10px; }
+
+.education__list {
+  width: 100%;
+  max-width: 500px; }
+
+.education__item {
+  margin: 10px 0; }
+
+.education__institution {
+  font-weight: 900; }
+  .education__institution:after {
+    content: ',';
+    padding-right: 5px; }
+
+.education__date {
+  opacity: 0.2; }
