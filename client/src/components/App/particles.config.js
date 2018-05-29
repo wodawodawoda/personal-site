@@ -8,13 +8,13 @@ const particlesConfig = {
       }
     },
     "color": {
-      "value": "#ffffff"
+      "value": "#f1a81e"
     },
     "shape": {
       "type": "circle",
       "stroke": {
         "width": 0,
-        "color": "#000000"
+        "color": "#f1a81e"
       },
       "polygon": {
         "nb_sides": 5
@@ -48,7 +48,7 @@ const particlesConfig = {
     "line_linked": {
       "enable": true,
       "distance": 205,
-      "color": "#ffffff",
+      "color": "#f1a81e",
       "opacity": 0.4,
       "width": 1
     },
@@ -56,7 +56,7 @@ const particlesConfig = {
       "enable": true,
       "speed": 2,
       "direction": "none",
-      "random": false,
+      "random": true,
       "straight": false,
       "out_mode": "out",
       "bounce": false,

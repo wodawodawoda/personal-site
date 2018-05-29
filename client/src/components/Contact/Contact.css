@@ -1,55 +1,65 @@
+:root {
+  --linkedin: rgb(0, 119, 181); }
+
 .contact {
   display: flex;
-  flex-flow: column nowrap;
+  flex-flow: row;
   grid-area: content;
   padding: 0 20px;
-  justify-content: center; }
+  justify-content: flex-start; }
+  .contact__logo {
+    color: #fff;
+    font-size: 8em;
+    font-weight: 700;
+    margin: auto;
+    text-align: center; }
   .contact__header {
     width: 100%;
     font-size: 4em; }
   .contact__content {
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-around; }
+    justify-content: flex-start; }
   .contact__card {
     display: flex;
     flex-flow: column nowrap;
-    width: 40%;
-    min-width: 300px;
-    height: 500px;
-    padding: 15px;
-    border-radius: 20px 0; }
-
-.form {
-  background: rgba(83, 83, 83, 0.8);
-  transition: 0.6s; }
-  .form:hover {
-    background: #787878; }
-  .form__item {
-    margin: 10px;
+    width: 48%;
+    max-width: 600px;
+    height: 48%;
+    max-height: 500px;
+    margin: 1%;
+    opacity: 0.5;
+    transition: 0.3s;
+    padding: 10px;
     font-size: 1.3em; }
-    .form__item--email {
-      margin-bottom: 15px; }
-
-.skype {
-  background: rgba(0, 175, 240, 0.8);
-  transition: 0.6s; }
-  .skype:hover {
-    background: #00aff0; }
-  .skype__logo {
-    color: #fff;
-    font-size: 8em;
-    font-weight: 700;
-    margin: auto;
-    text-align: center; }
-  .skype__username {
+    .contact__card:hover {
+      opacity: 1; }
+    .contact__card--skype {
+      background: rgba(0, 175, 240, 0.8);
+      transition: 0.6s; }
+      .contact__card--skype:hover {
+        background: #00aff0; }
+    .contact__card--linkedin {
+      background: var(--linkedin); }
+    .contact__card--email {
+      background: #c71610; }
+    .contact__card--phone {
+      background: #08851b; }
+  .contact__username {
     margin: auto; }
-  .skype__call {
-    margin: 20px auto auto;
-    font-size: 3.4em;
-    animation: pulse 2s infinite;
-    color: goldenrod;
-    transform: rotate(140deg); }
+
+.form__item {
+  display: none;
+  font-size: 1.3em; }
+  .form__item--email {
+    margin-bottom: 15px; }
+
+.skype__call {
+  margin: 20px auto auto;
+  font-size: 3.4em;
+  animation: pulse 2s infinite;
+  color: goldenrod;
+  transform: rotate(140deg); }
 
 @keyframes pulse {
   0% {
@@ -66,10 +76,13 @@
     .contact__header {
       font-size: 2em; }
     .contact__content {
-      flex-flow: column nowrap; }
+      flex-flow: column nowrap;
+      width: 100%; }
     .contact__card {
       width: 100%;
+      max-width: 100%;
       height: 50vh;
-      border-radius: 0; }
+      border-radius: 0;
+      margin: 0; }
   .form__item--message {
     height: 100px; } }
