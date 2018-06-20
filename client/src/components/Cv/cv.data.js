@@ -52,8 +52,8 @@ const cv = {
     {
       "institution": "Udacity",
       "area": "Front-end web developer",
-      "studyType": "",
-      "startDate": "208-03-28",
+      "studyType": "Nanodegree",
+      "startDate": "2018-03-28",
       "endDate": "",
       "gpa": "",
       "courses": []
@@ -73,7 +73,7 @@ const cv = {
       "studyType": "Licencjat",
       "startDate": "2014-09-28",
       "endDate": "2017-10-13",
-      "gpa": "4.2",
+      "gpa": "",
       "courses": []
     }
   ],
@@ -96,25 +96,131 @@ const cv = {
   ],
   "skills": [
     {
-      "name": "Front-end Development",
-      "level": "Junior",
+      "name": "React.js",
+			"icon": "react",
+      "level": "60",
       "keywords": [
-        "HTML",
-        "CSS",
-        "ES6",
-        "React",
-        "Webpack"
+        "frameworks"
       ]
     },
-    {
-      "name": "Back-end Development",
-      "level": "Junior",
-      "keywords": [
-        "Node.js",
-        "Express.js",
-        "MongoDB"
-      ]
-    }
+		{
+			"name": "HTML5",
+			"icon": "html5",
+			"level": "85",
+			"keywords": [
+				"basics"
+			]
+		},
+		{
+			"name": "ES6",
+			"level": "60",
+			"icon": "es6",
+			"keywords": [
+				"javascript",
+				"features"
+			]
+		},
+		{
+			"name": "JavaScript",
+			"icon": "js",
+			"level": "70",
+			"keywords": [
+				"basics",
+				"javascript"
+			]
+		},
+		{
+			"name": "CSS",
+			"icon": "css3",
+			"level": "85",
+			"keywords": [
+				"basics"
+			]
+		},
+		{
+			"name": "Node.js",
+			"icon": "node-js",
+			"level": "60",
+			"keywords": [
+				"backend",
+				"server-side"
+			]
+		},
+		{
+			"name": "MongoDB",
+			"icon": "mongo",
+			"level": "40",
+			"keywords": [
+				"databases"
+			]
+		},
+		{
+			"name": "Express.js",
+			"icon": "express-js",
+			"level": "60",
+			"keywords": [
+				"backend",
+				"server-side",
+				"features"
+			]
+		},
+		{
+			"name": "Git",
+			"icon": "git",
+			"level": "80",
+			"keywords": [
+				"basics",
+				"version-control"
+			]
+		},
+		{
+			"name": "Webpack",
+			"icon": "webpack",
+			"level": "70",
+			"keywords": [
+				"bundlers"
+			]
+		},
+		{
+			"name": "Gulp",
+			"icon": "gulp",
+			"level": "50",
+			"keywords": [
+				"bundlers"
+			]
+		},
+		{
+			"name": "Angular",
+			"icon": "angular",
+			"level": "25",
+			"keywords": [
+				"frameworks"
+			]
+		},
+		{
+			"name": "Backbone",
+			"icon": "backbone",
+			"level": "35",
+			"keywords": [
+				"frameworks"
+			]
+		},
+		{
+			"name": "Jasmine",
+			"icon": "jasmine",
+			"level": "60",
+			"keywords": [
+				"testing"
+			]
+		},
+		{
+			"name": "Yest",
+			"icon": "yest",
+			"level": "70",
+			"keywords": [
+				"testing"
+			]
+		},
   ],
   "languages": [
     {

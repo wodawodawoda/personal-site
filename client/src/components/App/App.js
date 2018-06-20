@@ -17,6 +17,7 @@ import About from '../About/About';
 import NoPage from '../NoPage/NoPage';
 import Sidebar from '../Sidebar/Sidebar';
 import Skills from '../Skills/Skills';
+import GithubPreview from '../Skills/Skill';
 import Contact from '../Contact/Contact';
 import Cv from '../Cv/Cv';
 
@@ -41,6 +42,7 @@ class App extends Component {
     return (
       <Router>
         <div className="app">
+					<input type="checkbox" className="menu-btn"/>
           <Particles
             className="particles-background"
             params={this.particlesNumber()}
@@ -50,6 +52,7 @@ class App extends Component {
             <Route exact path='/' component={ Home } />
             <Route path='/about' component={ About } />
             <Route path='/skills' component={ Skills } />
+            {/*<Route path='/skills/:project' component={ GithubPreview } />*/}
             <Route path='/cv' component={ Cv } />
             <Route path='/contact' render={ () => <Contact width={this.width} /> } />
             <Route component={ NoPage }/>

@@ -20,15 +20,40 @@
 
 .app
   display: grid
-  grid-template-columns: 60px calc(100% - 60px)
+  grid-template-columns: auto 1fr
   grid-template-rows: minmax(100vh, auto)
   grid-template-areas: "sidebar content"
   overflow: hidden
 
 @media (max-width: 768px)
   .app
-    //grid-template-columns: 0px auto
+    grid-template-columns: 0px auto
 
+// Menu show/hide button
+// TODO Add background svg sprite animation on btn
+.menu-btn
+  z-index: 100
+  position: fixed
+  top: 15px
+  left: 15px
+  appearance: none
+  width: 21px
+  height: 21px
+  border-left: 6px solid black
+  border-right: 6px solid black
+  display: flex
+  transition: 1s
+  &:after
+    content: ''
+    border-left: 5px solid black
+    margin: 0 2px
+    width: 21px
+    height: 21px
+
+.menu-btn:checked
+  transform: skewX(45deg) rotate(-90deg) skewY(45deg)
+.menu-btn:checked ~ .sidebar
+  left: 0
 
 // Transition group animations
 .fade-enter

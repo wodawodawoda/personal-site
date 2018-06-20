@@ -27,10 +27,10 @@ const CvTemplate = () => (
       <Basics />
     </div>
     <div className="cv__content">
-      <About />
-      <WorkExperience />
-      <Skills />
+      {/*<About />*/}
       <Education />
+      <Skills />
+      <WorkExperience />
     </div>
   </div>
 )
@@ -67,25 +67,12 @@ const Line = () => (
     <span className="section-header__break section-header__break--2"></span>
   </div>
 )
-
-const About = (props) => {
-  return (
-    <section className="cv__item cv__item--about">
-      <header className="section-header">
-        <h2 className="section-header__name">O mnie</h2>
-        <Line />
-      </header>
-      <p className="about__text">{cv.basics.summary}</p>
-    </section>
-  )
-}
-
 const WorkExperience = (props) => {
   return (
     <section className="cv__item cv__item--experience experience">
       <header className="section-header">
         <h2 className="section-header__name">Doświadczenie</h2>
-        <Line />
+        {/*<Line />*/}
       </header>
       <div className="experience__jobs">
         {cv.work.map((job, idx) => (
@@ -109,23 +96,35 @@ const WorkExperience = (props) => {
   )
 }
 
+
+const About = (props) => {
+  return (
+    <section className="cv__item cv__item--about">
+      <header className="section-header">
+        <h2 className="section-header__name">O mnie</h2>
+        {/*<Line />*/}
+      </header>
+      <p className="about__text">{cv.basics.summary}</p>
+    </section>
+  )
+}
+
 const Skills = (props) => {
   return (
     <section className="cv__item cv__item--skills">
       <header className="section-header">
         <h2 className="section-header__name">Umiejętności</h2>
-        <Line />
+        {/*<Line />*/}
       </header>
       <div className="skills__list">
         {cv.skills.map((skill, idx) => (
           <div key={idx} className="skills__skill">
-            <h3 className="skills__name">{skill.name}</h3>
-            <span className="skills__level">Poziom: {skill.level}</span>
-            <div className="skills__keywords">
-              {skill.keywords.map((keyword, idx) => (
-                <span key={idx} className="skills__keyword">{keyword}</span>
-              ))}
-            </div>
+            <p className="skills__name">
+							<span className={`skills__icon skills__icon--${skill.icon} fab fa-${skill.icon}`}></span>
+							{skill.name}
+						</p>
+            {/*<span className="skills__level">Poziom: {skill.level}</span>*/}
+            {/*<div className="skills__keywords"></div>*/}
           </div>
         ))}
       </div>
@@ -138,20 +137,22 @@ const Education = (props) => {
     <section className="cv__item cv__item--education">
       <header className="section-header">
         <h2 className="section-header__name">Wykształcenie</h2>
-        <Line />
+        {/*<Line />*/}
       </header>
       <div className="education__list">
-          {cv.education.map((institution, idx) => (
-            <div key={idx} className="education__item">
-              <p className="education__date">{institution.startDate} - {institution.endDate ? institution.endDate : '...'}</p>
-              <div className="education__circle"></div>
-              <div className="education__basics">
-                <p className="education__institution">{institution.institution}</p>
-                <p className="education__area">{institution.area}</p>
-              </div>
-              <p className="education__type">{institution.studyType} {institution.gpa}</p>
-            </div>
-          ))}
+				{cv.education.map((institution, idx) => (
+					<div key={idx} className="education__item">
+						<span className="education__logo fab fa-android"></span>
+						<div className="education__content">
+							<p className="education__date">{institution.startDate} - {institution.endDate ? institution.endDate : '...'}</p>
+							<div className="education__basics">
+								<p className="education__institution">{institution.institution}</p>
+								<p className="education__area">{institution.area}</p>
+							</div>
+							<p className="education__type">{institution.studyType} {institution.gpa}</p>
+						</div>
+					</div>
+				))}
       </div>
     </section>
   )

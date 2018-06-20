@@ -11,6 +11,7 @@
   flex-flow: row wrap
   align-items: flex-start
   position: relative
+  overflow-y: auto
   &__download
     background: rgba(63,63,63, 0.5)
     display: flex
@@ -27,6 +28,7 @@
   &__template
     display: flex
     height: 100vh
+    width: 100%
   &__aside
     position: relative
     background-image: url("./art/aside-bg.svg")
@@ -43,9 +45,10 @@
       right: 0
       background: linear-gradient(rgba(68,68,70, 0.5), rgba(25, 25, 25, 0.7))
   &__content
-    background: linear-gradient(90deg, var(--cvContentBg) 50vh, rgba(0,0,0,0))
+    background: var(--cvContentBg)
     overflow-x: hidden
     overflow-y: auto
+    width: 100%
   &__item
     display: flex
     flex-flow: row wrap
@@ -83,9 +86,12 @@
 
 @media (max-width: 768px)
   .cv
+    &__content
+      overflow: initial
     &__template
+      overflow: auto
       flex-flow: column
-      height: 100%
+      height: 100vh
       width: 100%
 
 .section-header
@@ -95,18 +101,20 @@
   overflow: hidden
   &__name
     font-size: 2em
-    font-style: italic
     text-transform: uppercase
     margin: 0
     color: var(--header)
+    padding-bottom: 10px
   &__line
     background: linear-gradient(90deg, var(--gold), var(--gold-light))
+    border-radius: 20px
     flex: 1
-    height: 2em
+    height: 1em
+    max-width: 200px
     display: flex
     transform: skewX(45deg)
     position: relative
-    right: -45px
+    margin-left: auto
   &__break
     width: 40px
     background: white
@@ -197,33 +205,75 @@
 .skills
   &__list
     width: 100%
-    max-width: 500px
+    display: grid
+    grid-template-columns: 50% 50%
   &__skill
+    display: flex
+    align-items: center
+    align-content: center
+  &__icon
+    font-size: 2.6em
+    width: 1.6em
+    display: flex
+    justify-content: center
   &__name
+    display: flex
+    align-items: center
   &__level
   &__keywords
     display: flex
+    flex-flow: column
     width: 100%
     justify-content: space-around
     margin-top: 10px
   &__keyword
+    border-right: 5px solid black
+    margin: 3px 0
+    &--js
+    &--node
+    &--node
+    &--react
+      font-size: 1.8em
+      animation: pulse 1s infinite
+    &--webpack
+      font-size: 1.2em
+    &--css
+      font-size: 2em
+    &--html5
+      font-size: 2em
+    &--es6
+      font-size: 1.5em
+    &--mongo
+      font-size: 1.2em
 
 .education
   &__list
     width: 100%
     display: flex
     flex-flow: row wrap
-  &__item
+    justify-content: space-around
+  &__arrow
+    margin-right: 40px
     display: flex
     flex-flow: column
+    justify-content: space-around
+    font-size: 3em
+  &__logo
+    margin: auto 50px auto auto
+    animation: pulse 1s infinite
+    font-size: 3em
+  &__item
+    display: flex
+    justify-content: center
+  &__content
+    display: flex
+    flex-flow: column
+    padding: 10px 20px
     margin: 10px 0
     width: 280px
-    //max-width: 350px
+    background: rgba(0,0,0,0.2)
   &__institution
     font-weight: 900
-    &:after
-      content: ','
-      padding-right: 5px
   &__area
   &__institution
   &__date
@@ -235,4 +285,16 @@
     border-radius: 50%
     background: var(--gold)
     margin: 10px auto
+
+@media (max-width: 768px)
+  .education
+    &__logo
+      display: none
+@keyframes pulse
+  0%
+    opacity: 1
+  50%
+    opacity: 0.4
+  100%
+    opacity: 1
 

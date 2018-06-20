@@ -3,105 +3,80 @@
 
 .skills {
   display: flex;
-  flex-flow: column;
+  flex-flow: row;
   grid-area: content; }
+  .skills__window {
+    width: 100%;
+    display: flex;
+    justify-content: center; }
+  .skills__preview {
+    width: 70%;
+    position: relative;
+    transition: 2s;
+    display: flex;
+    justify-content: center; }
+    .skills__preview:hover .skills__full {
+      background: rgba(0, 0, 0, 0.5);
+      padding: 0 40px; }
+    .skills__preview--full {
+      width: 100%; }
+  .skills__full {
+    z-index: 1;
+    position: absolute;
+    margin: auto;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    border: 0;
+    margin-top: 20px;
+    font-size: 1.2em;
+    transition: 0.4s;
+    cursor: pointer; }
+    .skills__full:hover {
+      letter-spacing: 10px;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 10px 40px; }
+    .skills__full:before {
+      content: '< - - '; }
+    .skills__full:after {
+      content: ' - - >'; }
   .skills__projects {
     display: flex;
-    flex-flow: row wrap;
-    justify-content: stretch; }
-    .skills__projects .github-item {
-      min-width: 300px;
-      width: calc(100% / 3); }
+    flex-flow: column;
+    width: 30%;
+    height: 100vh;
+    overflow: auto;
+    transition: 2s; }
+    .skills__projects--hide {
+      width: 0; }
+  .skills__frame {
+    transition: 0.5s;
+    width: 100%;
+    opacity: 0;
+    height: 100%; }
+    .skills__frame--show {
+      opacity: 1; }
 
-.experience__step {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: 3s;
-  position: relative; }
-  .experience__step:hover .experience__text {
-    opacity: 1;
-    width: 100px; }
+.loader {
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  font-size: 3em; }
 
-.experience__icon {
-  font-size: 3rem; }
+.skills__loader--hide {
+  opacity: 0; }
 
-.experience__text {
-  transition: 0.5s;
-  width: 0;
-  opacity: 0;
-  border: 1px solid black;
-  border-left-style: solid;
-  border-left-color: goldenrod;
-  border-left-width: 10px;
-  height: 6px; }
-
-.animate {
-  animation-name: rotate;
-  animation-duration: 5s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite; }
-
-.experience__step--1 {
-  grid-column: 10;
-  left: -15px;
-  animation-direction: reverse; }
-
-.experience__step--2 {
-  grid-column: 9;
-  left: -14px;
-  animation-direction: reverse; }
-
-.experience__step--3 {
-  grid-column: 8;
-  left: 136px;
-  animation-direction: reverse; }
-
-.experience__step--4 {
-  grid-column: 7;
-  left: 108px;
-  animation-direction: normal; }
-
-.experience__step--5 {
-  grid-column: 6;
-  left: -101px;
-  animation-direction: reverse; }
-
-.experience__step--6 {
-  grid-column: 5;
-  left: 145px;
-  animation-direction: normal; }
-
-.experience__step--7 {
-  grid-column: 4;
-  left: -53px;
-  animation-direction: reverse; }
-
-.experience__step--8 {
-  grid-column: 3;
-  left: 95px;
-  animation-direction: reverse; }
-
-.experience__step--9 {
-  grid-column: 2;
-  left: -49px;
-  animation-direction: normal; }
-
-.experience__step--10 {
-  grid-column: 1;
-  left: -77px;
-  animation-direction: normal; }
-
-@keyframes rotate {
-  0% {
-    transform: rotate(0deg); }
-  100% {
-    transform: rotate(360deg); } }
+.skills__loader--show {
+  opacity: 1; }
 
 @media (max-width: 768px) {
-  .skills__projects .github-item {
-    width: 50%; } }
-
-@media (max-width: 660px) {
-  .skills__projects .github-item {
-    width: 100%; } }
+  .skills {
+    flex-flow: column; }
+    .skills__projects {
+      width: 100%;
+      height: inherit; }
+    .skills__preview {
+      width: 100%;
+      height: 100%; } }

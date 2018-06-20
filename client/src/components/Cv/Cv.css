@@ -10,7 +10,8 @@
   display: flex;
   flex-flow: row wrap;
   align-items: flex-start;
-  position: relative; }
+  position: relative;
+  overflow-y: auto; }
   .cv__download {
     background: rgba(63, 63, 63, 0.5);
     display: flex;
@@ -26,7 +27,8 @@
     text-transform: uppercase; }
   .cv__template {
     display: flex;
-    height: 100vh; }
+    height: 100vh;
+    width: 100%; }
   .cv__aside {
     position: relative;
     background-image: url("./art/aside-bg.svg");
@@ -43,9 +45,10 @@
       right: 0;
       background: linear-gradient(rgba(68, 68, 70, 0.5), rgba(25, 25, 25, 0.7)); }
   .cv__content {
-    background: linear-gradient(90deg, var(--cvContentBg) 50vh, rgba(0, 0, 0, 0));
+    background: var(--cvContentBg);
     overflow-x: hidden;
-    overflow-y: auto; }
+    overflow-y: auto;
+    width: 100%; }
   .cv__item {
     display: flex;
     flex-flow: row wrap;
@@ -76,9 +79,12 @@
       border-bottom: 400px solid; }
 
 @media (max-width: 768px) {
+  .cv__content {
+    overflow: initial; }
   .cv__template {
+    overflow: auto;
     flex-flow: column;
-    height: 100%;
+    height: 100vh;
     width: 100%; } }
 
 .section-header {
@@ -88,18 +94,20 @@
   overflow: hidden; }
   .section-header__name {
     font-size: 2em;
-    font-style: italic;
     text-transform: uppercase;
     margin: 0;
-    color: var(--header); }
+    color: var(--header);
+    padding-bottom: 10px; }
   .section-header__line {
     background: linear-gradient(90deg, var(--gold), var(--gold-light));
+    border-radius: 20px;
     flex: 1;
-    height: 2em;
+    height: 1em;
+    max-width: 200px;
     display: flex;
     transform: skewX(45deg);
     position: relative;
-    right: -45px; }
+    margin-left: auto; }
   .section-header__break {
     width: 40px;
     background: white; }
@@ -182,30 +190,80 @@
 
 .skills__list {
   width: 100%;
-  max-width: 500px; }
+  display: grid;
+  grid-template-columns: 50% 50%; }
+
+.skills__skill {
+  display: flex;
+  align-items: center;
+  align-content: center; }
+
+.skills__icon {
+  font-size: 2.6em;
+  width: 1.6em;
+  display: flex;
+  justify-content: center; }
+
+.skills__name {
+  display: flex;
+  align-items: center; }
 
 .skills__keywords {
   display: flex;
+  flex-flow: column;
   width: 100%;
   justify-content: space-around;
   margin-top: 10px; }
 
+.skills__keyword {
+  border-right: 5px solid black;
+  margin: 3px 0; }
+  .skills__keyword--react {
+    font-size: 1.8em;
+    animation: pulse 1s infinite; }
+  .skills__keyword--webpack {
+    font-size: 1.2em; }
+  .skills__keyword--css {
+    font-size: 2em; }
+  .skills__keyword--html5 {
+    font-size: 2em; }
+  .skills__keyword--es6 {
+    font-size: 1.5em; }
+  .skills__keyword--mongo {
+    font-size: 1.2em; }
+
 .education__list {
   width: 100%;
   display: flex;
-  flex-flow: row wrap; }
+  flex-flow: row wrap;
+  justify-content: space-around; }
+
+.education__arrow {
+  margin-right: 40px;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-around;
+  font-size: 3em; }
+
+.education__logo {
+  margin: auto 50px auto auto;
+  animation: pulse 1s infinite;
+  font-size: 3em; }
 
 .education__item {
   display: flex;
+  justify-content: center; }
+
+.education__content {
+  display: flex;
   flex-flow: column;
+  padding: 10px 20px;
   margin: 10px 0;
-  width: 280px; }
+  width: 280px;
+  background: rgba(0, 0, 0, 0.2); }
 
 .education__institution {
   font-weight: 900; }
-  .education__institution:after {
-    content: ',';
-    padding-right: 5px; }
 
 .education__date {
   opacity: 0.2; }
@@ -216,3 +274,15 @@
   border-radius: 50%;
   background: var(--gold);
   margin: 10px auto; }
+
+@media (max-width: 768px) {
+  .education__logo {
+    display: none; } }
+
+@keyframes pulse {
+  0% {
+    opacity: 1; }
+  50% {
+    opacity: 0.4; }
+  100% {
+    opacity: 1; } }

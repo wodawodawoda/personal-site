@@ -1,81 +1,81 @@
 \:root
   --anim-width: 10px
 
-@function randomize($min, $max)
-  @return floor($min + random() * ($max + 1 - $min))
-
 .skills
   display: flex
-  flex-flow: column
+  flex-flow: row
   grid-area: content
-  &__projects
-    display: flex
-    flex-flow: row wrap
-    justify-content: stretch
-    .github-item
-      min-width: 300px
-      width: calc(100% / 3)
-
-.experience
-  &__step
+  &__window
+    width: 100%
     display: flex
     justify-content: center
-    align-items: center
-    transition: 3s
+  &__preview
+    width: 70%
     position: relative
-    &:hover .experience__text
-      opacity: 1
-      width: 100px
-  &__icon
-    font-size: 3rem
-  &__text
+    transition: 2s
+    display: flex
+    justify-content: center
+    &:hover .skills__full
+      background: rgba(0,0,0,0.5)
+      padding: 0 40px
+    &--full
+      width: 100%
+  &__full
+    z-index: 1
+    position: absolute
+    margin: auto
+    background: rgba(0,0,0,0.1)
+    border-radius: 20px
+    border: 0
+    margin-top: 20px
+    font-size: 1.2em
+    transition: 0.4s
+    cursor: pointer
+    &:hover
+      letter-spacing: 10px
+      background: rgba(0,0,0,0.5)
+      padding: 10px 40px
+    &:before
+      content: '< - - '
+    &:after
+      content: ' - - >'
+  &__projects
+    display: flex
+    flex-flow: column
+    width: 30%
+    height: 100vh
+    overflow: auto
+    transition: 2s
+    &--hide
+      width: 0
+  &__frame
     transition: 0.5s
-    width: 0
+    width: 100%
     opacity: 0
-    border: 1px solid black
-    border-left-style: solid
-    border-left-color: goldenrod
-    border-left-width: 10px
-    height: 6px
+    height: 100%
+    &--show
+      opacity: 1
 
-.animate
-  animation-name: rotate
-  animation-duration: 5s
-  animation-timing-function: linear
-  animation-iteration-count: infinite
-
-
-
-@for $i from 1 through 10
-  $time: random(2)
-  .experience__step--#{$i}
-    grid-column: 11 - $i
-    //left: -60 + ($i * 10) + %
-    left: randomize(-150, 150) + px
-    //left: random(30) + 4 * $i - 15 + vw
-    //top: random(400) - 100 + 20px * $i
-
-    @if $time == 1
-      animation-direction: normal
-    @else
-      animation-direction: reverse
-
-
-@keyframes rotate
-  0%
-    transform: rotate(0deg)
-  100%
-    transform: rotate(360deg)
+.loader
+  z-index: -1
+  position: absolute
+  top: 0
+  left: 0
+  bottom: 0
+  right: 0
+  font-size: 3em
+.skills__loader--hide
+  opacity: 0
+.skills__loader--show
+  opacity: 1
 
 
 @media (max-width: 768px)
   .skills
+    flex-flow: column
     &__projects
-      .github-item
-        width: 50%
-
-@media (max-width: 660px)
-  .skills
-    &__projects
-      .github-item
-        width: 100%
+      width: 100%
+      height: inherit
+    &__preview
+      width: 100%
+      height: 100%
