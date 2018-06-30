@@ -49,12 +49,12 @@ class App extends Component {
           />
           <Route path='*' component={ Sidebar }/>
           <Switch>
-            <Route exact path='/' component={ Home } />
-            <Route path='/about' component={ About } />
-            <Route path='/skills' component={ Skills } />
+            <Route exact path='/personal-site' component={ Home } />
+            <Route path='/personal-site/about' component={ About } />
+            <Route path='/personal-site/skills' component={ Skills } />
             {/*<Route path='/skills/:project' component={ GithubPreview } />*/}
-            <Route path='/cv' component={ Cv } />
-            <Route path='/contact' render={ () => <Contact width={this.width} /> } />
+            <Route path='/personal-site/cv' component={ Cv } />
+            <Route path='/personal-site/contact' render={ () => <Contact width={this.width} /> } />
             <Route component={ NoPage }/>
           </Switch>
         </div>
