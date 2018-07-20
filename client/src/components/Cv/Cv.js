@@ -4,6 +4,9 @@ import './Cv.css'
 
 import cv from './cv.data';
 import './art/aside-bg.svg'
+// import './art/kodilla.png'
+// import './art/udacity.png'
+// import './art/ue.png'
 
 class Cv extends Component {
   render() {
@@ -113,16 +116,14 @@ const Skills = (props) => {
   return (
     <section className="cv__item cv__item--skills">
       <header className="section-header">
-        <h2 className="section-header__name">Umiejętności</h2>
+        <h2 className="section-header__name">Technologie</h2>
         {/*<Line />*/}
       </header>
       <div className="skills__list">
         {cv.skills.map((skill, idx) => (
           <div key={idx} className="skills__skill">
-            <p className="skills__name">
-							<span className={`skills__icon skills__icon--${skill.icon} fab fa-${skill.icon}`}></span>
-							{skill.name}
-						</p>
+						<img className="skills__icon" src={require(`./art/${skill.icon}-original.svg`)} alt={skill.icon}/>
+            <p className="skills__name">{skill.name}</p>
             {/*<span className="skills__level">Poziom: {skill.level}</span>*/}
             {/*<div className="skills__keywords"></div>*/}
           </div>
@@ -142,7 +143,7 @@ const Education = (props) => {
       <div className="education__list">
 				{cv.education.map((institution, idx) => (
 					<div key={idx} className="education__item">
-						<span className="education__logo fab fa-android"></span>
+						<img src={require(`./art/${institution.img}`)} className="education__logo" />
 						<div className="education__content">
 							<p className="education__date">{institution.startDate} - {institution.endDate ? institution.endDate : '...'}</p>
 							<div className="education__basics">

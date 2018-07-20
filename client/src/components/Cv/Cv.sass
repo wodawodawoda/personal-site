@@ -206,16 +206,14 @@
   &__list
     width: 100%
     display: grid
-    grid-template-columns: 50% 50%
+    grid-template-columns: repeat(4, auto)
   &__skill
     display: flex
     align-items: center
-    align-content: center
+    margin: 15px 0
   &__icon
-    font-size: 2.6em
-    width: 1.6em
-    display: flex
-    justify-content: center
+    max-width: 80px
+    margin-right: 1em
   &__name
     display: flex
     align-items: center
@@ -259,8 +257,9 @@
     justify-content: space-around
     font-size: 3em
   &__logo
+    max-width: 70px
     margin: auto 50px auto auto
-    animation: pulse 1s infinite
+    animation: pulse 3s infinite
     font-size: 3em
   &__item
     display: flex
@@ -290,6 +289,14 @@
   .education
     &__logo
       display: none
+  .skills
+    &__icon
+      max-width: 50px
+
+@media (max-width: 1200px)
+  .skills
+    &__list
+      grid-template-columns: repeat(2, auto)
 @keyframes pulse
   0%
     opacity: 1

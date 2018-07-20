@@ -51,7 +51,8 @@ const cv = {
   "education": [
     {
       "institution": "Udacity",
-      "area": "Front-end web developer",
+      "img": "udacity.png",
+			"area": "Front-end web developer",
       "studyType": "Nanodegree",
       "startDate": "2018-03-28",
       "endDate": "",
@@ -60,7 +61,8 @@ const cv = {
     },
     {
       "institution": "Kodilla",
-      "area": "Web Development",
+      "img": "kodilla.png",
+			"area": "Web Development",
       "studyType": "Bootcamp",
       "startDate": "2017-12-06",
       "endDate": "2018-05-23",
@@ -69,7 +71,8 @@ const cv = {
     },
     {
       "institution": "University Ekonomiczny we Wrocławiu",
-      "area": "Finanse i rachnkowość",
+      "img": "ue.png",
+			"area": "Finanse i rachnkowość",
       "studyType": "Licencjat",
       "startDate": "2014-09-28",
       "endDate": "2017-10-13",
@@ -122,7 +125,7 @@ const cv = {
 		},
 		{
 			"name": "JavaScript",
-			"icon": "js",
+			"icon": "javascript",
 			"level": "70",
 			"keywords": [
 				"basics",
@@ -139,7 +142,7 @@ const cv = {
 		},
 		{
 			"name": "Node.js",
-			"icon": "node-js",
+			"icon": "nodejs",
 			"level": "60",
 			"keywords": [
 				"backend",
@@ -148,7 +151,7 @@ const cv = {
 		},
 		{
 			"name": "MongoDB",
-			"icon": "mongo",
+			"icon": "mongodb",
 			"level": "40",
 			"keywords": [
 				"databases"
@@ -156,7 +159,7 @@ const cv = {
 		},
 		{
 			"name": "Express.js",
-			"icon": "express-js",
+			"icon": "express",
 			"level": "60",
 			"keywords": [
 				"backend",
@@ -209,14 +212,6 @@ const cv = {
 			"name": "Jasmine",
 			"icon": "jasmine",
 			"level": "60",
-			"keywords": [
-				"testing"
-			]
-		},
-		{
-			"name": "Yest",
-			"icon": "yest",
-			"level": "70",
 			"keywords": [
 				"testing"
 			]
