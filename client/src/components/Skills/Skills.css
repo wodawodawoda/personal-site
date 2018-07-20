@@ -58,12 +58,11 @@
 
 .loader {
   z-index: -1;
+  font-size: 3em;
+  transition: 1s;
   position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  font-size: 3em; }
+  top: 30%;
+  opacity: 1; }
 
 .skills__loader--hide {
   opacity: 0; }

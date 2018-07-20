@@ -16,6 +16,7 @@ class Skills extends Component {
     super(props);
     this.state = {
       counter: 0,
+			window: window.innerWidth,
       projects
     }
   }
@@ -28,18 +29,17 @@ class Skills extends Component {
 	showLoader = () => {
 		document.getElementById('loader').classList.add('skills__loader--show')
 	}
-
-	windowSize = () => {
-  	this.setState({window: window.innerWidth})
-	}
-
-	componentDidMount() {
-  	this.windowSize()
-	}
+	//
+	// windowSize = () => {
+  	// this.setState({window: window.innerWidth})
+	// }
+	//
+	// componentDidMount() {
+  	// this.windowSize()
+	// }
 
 	handleSelect = (e) => {
-  	console.log({history: this.props.history, target: e.target.value})
-		this.props.history.push(`/skills/${e.target.value}`)
+		this.props.history.push(`/personal-site/skills/${e.target.value}`)
 	}
 
   render() {
@@ -48,7 +48,7 @@ class Skills extends Component {
         <section className="skills__projects">
 					{this.state.window < 768 && this.state.window ?
 						<select name="" id="" onChange={this.handleSelect}>
-							{this.state.projects.map(project => <option value={project.repo}>{project.repo}</option>)}
+							{this.state.projects.map(project => <option value={`${project.repo}`}>{project.repo}</option>)}
 						</select> :
 					this.state.projects.map(project => {
 							return <GithubItem
@@ -61,12 +61,14 @@ class Skills extends Component {
         </section>
 				<section className="skills__preview">
 					{this.Loader()}
-					<Route path='/skills/:project' render={ (routeProps) => {
-						return <Skill
-								routeProps={routeProps}
-								repo={routeProps.match.params.project}
-							/>
-					}
+					<Route
+						path='/personal-site/skills/:project'
+						render={ (routeProps) => {
+							return <Skill
+									routeProps={routeProps}
+									repo={routeProps.match.params.project}
+								/>
+						}
 					} />
 				</section>
       </div>

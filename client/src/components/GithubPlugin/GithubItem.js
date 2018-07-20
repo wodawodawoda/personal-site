@@ -40,7 +40,7 @@ class GithubItem extends Component {
 		return (
 			<div id={this.props.id} className={`github-item`}>
 				<div className="github-item__header">
-					<h2 className="github-item__name"><a href={this.state.repo.html_url}>{this.state.repo.name}</a></h2>
+					<h2 className="github-item__name"><a href={`${this.state.repo.html_url}`}>{this.state.repo.name}</a></h2>
 					<svg height="32" className="octicon octicon-mark-github" viewBox="0 0 16 16" version="1.1" width="32"
 							 aria-hidden="true">
 						<path fillRule="evenodd"
@@ -56,7 +56,7 @@ class GithubItem extends Component {
 	renderDescription = () => (
 		<div className="github-item__description">
 			<p>{this.state.repo.description ? this.state.repo.description : "No description"}</p>
-			<Link to={`/skills/${this.props.repo}`} onClick={(e) => this.handleLink(e)}>Previev...</Link>
+			<Link to={`/personal-site/skills/${this.props.repo}`} onClick={(e) => this.handleLink(e)}>Previev...</Link>
 		</div>
 	);
 

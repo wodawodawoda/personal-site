@@ -23,6 +23,7 @@
   .contact__card {
     display: flex;
     flex-flow: column nowrap;
+    align-items: center;
     width: 48%;
     max-width: 600px;
     height: 48%;
@@ -50,6 +51,7 @@
 
 .form__item {
   display: none;
+  margin: 10px;
   font-size: 1.3em; }
   .form__item--email {
     margin-bottom: 15px; }

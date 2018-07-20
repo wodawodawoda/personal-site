@@ -6,7 +6,8 @@ import main from './main-elo.png'
 class Home extends Component {
 	printText = (content, id, random, time = 200) => {
 		let text = [...content]
-		const place = document.getElementById(id)
+		// Prevent undefined place variable when id is not found
+		const place = document.getElementById(id) || document.createElement('div')
 		let i = 0;
 		if (random) {
 			let last = 0

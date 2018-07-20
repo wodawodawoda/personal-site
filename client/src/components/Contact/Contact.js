@@ -11,21 +11,21 @@ const Contact = (props) => (
         {/*<span className="contact__username">live:mateusz.wodnik</span>*/}
         {/*<span className="skype__call fas fa-phone"></span>*/}
       </a>
-      <a href="http://www.linkedin.com" className="contact__card contact__card--linkedin">
+      <a href="http://www.linkedin.com/in/mateusz-wodnik" className="contact__card contact__card--linkedin">
         <span className="contact__logo fab fa-linkedin"></span>
         {/*<span className="contact__username">linkedin.com/mateusz.wodnik</span>*/}
       </a>
-      <a href="http://www.linkedin.com" className="contact__card contact__card--phone">
+      <a href="tel:691933520" className="contact__card contact__card--phone">
         <span className="contact__logo fas fa-phone-square"></span>
-        {/*<span className="skype__username">691 933 520</span>*/}
+        {/*<span className="contact__phone">691 933 520</span>*/}
       </a>
-      <form className="contact__card contact__card--email form">
+      <a href="mailto:mateusz.wodnik@gmail.com" className="contact__card contact__card--email form">
         <span className="contact__logo fas fa-envelope"></span>
         <input type="email" className="form__item form__item--email" placeholder="adres@email.pl"/>
         <input type="text" className="form__item form__item--subject" placeholder="Temat"/>
         <textarea className="form__item form__item--message" name="message" id="message" cols="30" rows="10" placeholder="Wiadomość"></textarea>
         <button className="form__item form__item--submit" type="submit">Wyślij</button>
-      </form>
+      </a>
     </main>
   </div>
 );

@@ -30,7 +30,7 @@ const CvTemplate = () => (
       {/*<About />*/}
       <Education />
       <Skills />
-      <WorkExperience />
+      {/*<WorkExperience />*/}
     </div>
   </div>
 )

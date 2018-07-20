@@ -4,7 +4,8 @@ class GithubPreview extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			repo: ''
+			repo: '',
+			window: window.innerWidth
 		}
 	}
 	componentDidMount() {
@@ -36,10 +37,10 @@ class GithubPreview extends Component {
 		console.log(this.props)
 		return(
 			<div className="skills__window">
-				<button
+				{this.state.window > 768 ? <button
 					className="skills__full"
 					onClick={this.handleFullWidth}
-				>⎚</button>
+				>⎚</button> : null}
 				<iframe
 					className="skills__frame"
 					src={`https://wodawodawoda.github.io/${this.props.repo}`}

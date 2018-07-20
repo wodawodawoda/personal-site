@@ -25,12 +25,6 @@
   grid-template-areas: "sidebar content"
   overflow: hidden
 
-@media (max-width: 768px)
-  .app
-    grid-template-columns: 0px auto
-  .menu-btn
-    display: block
-
 // Menu show/hide button
 // TODO Add background svg sprite animation on btn
 .menu-btn
@@ -44,7 +38,6 @@
   height: 21px
   border-left: 6px solid black
   border-right: 6px solid black
-  display: flex
   transition: 1s
   &:after
     content: ''
@@ -52,6 +45,12 @@
     margin: 0 2px
     width: 21px
     height: 21px
+
+@media (max-width: 768px)
+  .app
+    grid-template-columns: 0px auto
+  .menu-btn
+    display: block
 
 .menu-btn:checked
   transform: skewX(45deg) rotate(-90deg) skewY(45deg)
