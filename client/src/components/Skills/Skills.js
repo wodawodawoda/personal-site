@@ -4,12 +4,9 @@ import { Route, Link } from 'react-router-dom';
 import './Skills.css';
 import GithubItem from '../GithubPlugin/GithubItem';
 
-import design from './images/design.png'
-import golden from './images/golden.png'
-import sudoku from './images/sudoku.png'
-import photo from './images/photo.png'
-import memory from './images/memory.png'
 import Skill from './Skill'
+
+import projects from './data'
 
 class Skills extends Component {
   constructor (props){
@@ -17,29 +14,24 @@ class Skills extends Component {
     this.state = {
       counter: 0,
 			window: window.innerWidth,
-      projects
+      projects,
+			preview: {}
     }
   }
 
-	// Alternative method to get parameter to simple callback from Skill element
-	getChildRouteParameter = () => {
-		return this.props.location.pathname.slice(this.props.match.path.length + 1)
+  componentDidMount() {
+  	this.setState({projects})
 	}
-
-	showLoader = () => {
-		document.getElementById('loader').classList.add('skills__loader--show')
-	}
-	//
-	// windowSize = () => {
-  	// this.setState({window: window.innerWidth})
-	// }
-	//
-	// componentDidMount() {
-  	// this.windowSize()
-	// }
 
 	handleSelect = (e) => {
-		this.props.history.push(`/personal-site/skills/${e.target.value}`)
+		this.setState({preview: {url: e.target.value}})
+	}
+
+	handleLink = (e, url, repo) => {
+		e.preventDefault()
+		console.log(url)
+		this.setState({preview: {url}})
+		console.log(this.state)
 	}
 
   render() {
@@ -48,7 +40,8 @@ class Skills extends Component {
         <section className="skills__projects">
 					{this.state.window < 768 && this.state.window ?
 						<select name="" id="" onChange={this.handleSelect}>
-							{this.state.projects.map(project => <option value={`${project.repo}`}>{project.repo}</option>)}
+							{this.state.projects.map((project, idx) =>
+								<option key={idx} value={`${project.url}`}>{project.repo}</option>)}
 						</select> :
 					this.state.projects.map(project => {
 							return <GithubItem
@@ -56,63 +49,19 @@ class Skills extends Component {
 								id={project.id}
 								user={project.user}
 								repo={project.repo}
+								url={project.url}
+								handleLink={this.handleLink}
 							/>
 					})}
         </section>
 				<section className="skills__preview">
-					{this.Loader()}
-					<Route
-						path='/personal-site/skills/:project'
-						render={ (routeProps) => {
-							return <Skill
-									routeProps={routeProps}
-									repo={routeProps.match.params.project}
-								/>
-						}
-					} />
+					{this.state.preview.url ?
+						<Skill url={this.state.preview.url}/> : null
+					}
 				</section>
       </div>
     );
   }
-
-  Loader = () => {
-  	return (
-  		<div id="loader" className="loader">Loading...</div>
-		)
-	}
 }
 
 export default Skills;
-
-const projects = [
-	{
-		id: 1,
-		user: "wodawodawoda",
-		img: "memory",
-		repo: "Memory-game"
-	},
-	{
-		id: 2,
-		user: "wodawodawoda",
-		img: "sudoku",
-		repo: "Sudoku"
-	},
-	{
-		id: 3,
-		user: "wodawodawoda",
-		img: "design",
-		repo: "Design-template"
-	},
-	{
-		id: 4,
-		user: "wodawodawoda",
-		img: "golden",
-		repo: "Golden-template"
-	},
-	{
-		id: 5,
-		user: "wodawodawoda",
-		img: "photo",
-		repo: "Photo-template"
-	}
-]

@@ -56,14 +56,12 @@ class GithubItem extends Component {
 	renderDescription = () => (
 		<div className="github-item__description">
 			<p>{this.state.repo.description ? this.state.repo.description : "No description"}</p>
-			<Link to={`/personal-site/skills/${this.props.repo}`} onClick={(e) => this.handleLink(e)}>Previev...</Link>
+			<Link
+				to={`/personal-site/skills/${this.props.repo}`}
+				onClick={(e) => this.props.handleLink(e, this.props.url, this.props.repo)}
+			>Preview...</Link>
 		</div>
 	);
-
-	handleLink = (e) => {
-		// e.preventDefault()
-		document.getElementById('loader').classList.remove('skills__loader--hide')
-	}
 
 	renderReadme = () => (
 		/* TODO: Markdown to html */

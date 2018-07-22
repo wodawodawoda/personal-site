@@ -8,11 +8,6 @@ class GithubPreview extends Component {
 			window: window.innerWidth
 		}
 	}
-	componentDidMount() {
-	}
-
-	componentWillUnmount() {
-	}
 
 	static getDerivedStateFromProps(props, state) {
 		if(props.repo !== state.repo && state.repo) document.querySelector('.skills__frame').classList.remove('skills__frame--show')
@@ -21,8 +16,6 @@ class GithubPreview extends Component {
 		}
 	}
 
-
-
 	handleFullWidth = (e) => {
 		e.target.parentElement.parentElement.classList.toggle('skills__preview--full')
 		e.target.parentElement.parentElement.previousSibling.classList.toggle('skills__projects--hide')
@@ -30,7 +23,7 @@ class GithubPreview extends Component {
 
 	onLoadHandler = (e) => {
 		e.target.classList.add('skills__frame--show')
-		document.getElementById('loader').classList.add('skills__loader--hide')
+		// document.getElementById('loader').classList.add('skills__loader--hide')
 	}
 
 	render() {
@@ -41,9 +34,10 @@ class GithubPreview extends Component {
 					className="skills__full"
 					onClick={this.handleFullWidth}
 				>⎚</button> : null}
+				{console.log(this.props.url)}
 				<iframe
 					className="skills__frame"
-					src={`https://wodawodawoda.github.io/${this.props.repo}`}
+					src={this.props.url}
 					frameBorder="0"
 					onLoad={e => this.onLoadHandler(e)}
 				></iframe>
