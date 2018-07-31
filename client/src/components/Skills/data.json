@@ -21,6 +21,13 @@
     "repo": "Memory-game"
   },
   {
+    "id": 1,
+    "user": "wodawodawoda",
+    "img": "chat",
+    "url": "https://wodawodawoda.github.io/ChatApp",
+    "repo": "ChatApp"
+  },
+  {
     "id": 2,
     "user": "wodawodawoda",
     "img": "sudoku",
