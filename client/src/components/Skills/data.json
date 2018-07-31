@@ -1,5 +1,19 @@
 [
   {
+    "id": 6,
+    "user": "wodawodawoda",
+    "img": "kanban",
+    "url": "https://kanban2.herokuapp.com",
+    "repo": "kanban-board"
+  },
+  {
+    "id": 7,
+    "user": "wodawodawoda",
+    "img": "blog-cms",
+    "url": "https://blog-cms.herokuapp.com",
+    "repo": "blog-cms"
+  },
+  {
     "id": 1,
     "user": "wodawodawoda",
     "img": "memory",
@@ -33,12 +47,5 @@
     "img": "photo",
     "url": "https://wodawodawoda.github.io/Photo-template",
     "repo": "Photo-template"
-  },
-  {
-    "id": 6,
-    "user": "wodawodawoda",
-    "img": "kanban",
-    "url": "https://kanban2.herokuapp.com",
-    "repo": "kanban-board"
   }
 ]
