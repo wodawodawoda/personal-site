@@ -16,7 +16,7 @@ avoid being touched by bugs during gameplay. When player reaches the water the g
 To run dev or production version you need browser with enabled JavaScript.
 
 ## Demo
-https://wodawodawoda.github.io/personal-site/
+https://mateusz-wodnik.github.io/personal-site/
 
 ## Build setup
 Project was developed using:
