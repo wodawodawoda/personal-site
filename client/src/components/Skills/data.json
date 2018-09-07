@@ -10,14 +10,14 @@
     "id": 6,
     "user": "mateusz-wodnik",
     "img": "kanban",
-    "url": "https://kanban-auth.herokuapp.com",
+    "url": "https://kanban-react-auth.herokuapp.com/",
     "repo": "kanban-board"
   },
   {
     "id": 7,
     "user": "mateusz-wodnik",
     "img": "blog-cms",
-    "url": "https://blog-cms.herokuapp.com",
+    "url": "https://blog-rest-admin.herokuapp.com/",
     "repo": "blog-cms"
   },
   {
